@@ -1,12 +1,8 @@
-# -*- coding: utf-8 -*-
+
 from PyQt5 import QtCore, QtWidgets
 
-import Login_Page_icons_rc
-from Login_Page_customized import PasswordEdit
-
-
-
-# TODO: Improve readability
+import GUI.Login_Page_icons_rc
+from GUI.Login_Page_customized import PasswordEdit
 
 
 class LoginForm(QtWidgets.QWidget):
@@ -215,7 +211,6 @@ class LoginForm(QtWidgets.QWidget):
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
     login_form = LoginForm()
     login_form.show()
