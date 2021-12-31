@@ -5,7 +5,7 @@ import GUI.Login_Page_icons_rc
 from GUI.Login_Page_customized import PasswordEdit
 
 
-class Login_Page(QtWidgets.QWidget):
+class RegisterPage(QtWidgets.QWidget):
     """Basic login form.
     """
     def __init__(self, *args, **kwargs):
@@ -62,24 +62,24 @@ class Login_Page(QtWidgets.QWidget):
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
         self.verticalLayout_3.setContentsMargins(-1, 15, -1, -1)
 
-        self.label = QtWidgets.QLabel(self.widget)
-        self.label.setMinimumSize(QtCore.QSize(100, 150))
-        self.label.setMaximumSize(QtCore.QSize(150, 150))
-        self.label.setStyleSheet("image: url(:/icons/icons/StackOverFlow.png);")
-        self.verticalLayout_3.addWidget(self.label, 0, QtCore.Qt.AlignHCenter)
+        self.RegisterPage_label_StackPNG = QtWidgets.QLabel(self.widget)
+        self.RegisterPage_label_StackPNG.setMinimumSize(QtCore.QSize(100, 150))
+        self.RegisterPage_label_StackPNG.setMaximumSize(QtCore.QSize(150, 150))
+        self.RegisterPage_label_StackPNG.setStyleSheet("image: url(:/icons/icons/StackOverFlow.png);")
+        self.verticalLayout_3.addWidget(self.RegisterPage_label_StackPNG, 0, QtCore.Qt.AlignHCenter)
 
         self.formLayout_2 = QtWidgets.QFormLayout()
         self.formLayout_2.setContentsMargins(50, 35, 59, -1)
 
-        self.label_2 = QtWidgets.QLabel(self.widget)
-        self.label_2.setStyleSheet("color: rgb(231, 231, 231);\n"
+        self.RegisterPage_label_UsernamePNG = QtWidgets.QLabel(self.widget)
+        self.RegisterPage_label_UsernamePNG.setStyleSheet("color: rgb(231, 231, 231);\n"
                                    "font: 15pt \"Verdana\";")
-        self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_2)
+        self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.RegisterPage_label_UsernamePNG)
 
-        self.lineEdit = QtWidgets.QLineEdit(self.widget)
-        self.lineEdit.setMinimumSize(QtCore.QSize(0, 40))
-        self.lineEdit.setPlaceholderText("Username...") 
-        self.lineEdit.setStyleSheet("QLineEdit {\n"
+        self.RegisterPage_lineEdit_UsernameInput = QtWidgets.QLineEdit(self.widget)
+        self.RegisterPage_lineEdit_UsernameInput.setMinimumSize(QtCore.QSize(0, 40))
+        self.RegisterPage_lineEdit_UsernameInput.setPlaceholderText("Username...") 
+        self.RegisterPage_lineEdit_UsernameInput.setStyleSheet("QLineEdit {\n"
                                     "color: rgb(231, 231, 231);\n"
                                     "font: 15pt \"Verdana\";\n"
                                     "border: None;\n"
@@ -89,22 +89,22 @@ class Login_Page(QtWidgets.QWidget):
                                     "background: rgb(20, 20, 40);\n"
                                     "selection-background-color: darkgray;\n"
                                     "}")
-        self.lineEdit.setFocus(True)
-        self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit)
+        self.RegisterPage_lineEdit_UsernameInput.setFocus(True)
+        self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.RegisterPage_lineEdit_UsernameInput)
 
-        self.label_4 = QtWidgets.QLabel(self.widget)
-        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_4)
+        self.RegisterPage_label_MailPNG = QtWidgets.QLabel(self.widget)
+        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.RegisterPage_label_MailPNG)
 
-        self.label_3 = QtWidgets.QLabel(self.widget)
-        self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_3)
+        self.RegisterPage_label_PasswordPNG = QtWidgets.QLabel(self.widget)
+        self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.RegisterPage_label_PasswordPNG)
 
-        self.label_5 = QtWidgets.QLabel(self.widget)
-        self.formLayout_2.setWidget(6, QtWidgets.QFormLayout.LabelRole, self.label_5)
+        self.RegisterPage_label_PasswordAgainPNG = QtWidgets.QLabel(self.widget)
+        self.formLayout_2.setWidget(6, QtWidgets.QFormLayout.LabelRole, self.RegisterPage_label_PasswordAgainPNG)
         
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.widget)
-        self.lineEdit_3.setMinimumSize(QtCore.QSize(0, 40))
-        self.lineEdit_3.setPlaceholderText("Email...")
-        self.lineEdit_3.setStyleSheet("QLineEdit {\n"
+        self.RegisterPage_lineEdit_EmailInput = QtWidgets.QLineEdit(self.widget)
+        self.RegisterPage_lineEdit_EmailInput.setMinimumSize(QtCore.QSize(0, 40))
+        self.RegisterPage_lineEdit_EmailInput.setPlaceholderText("Email...")
+        self.RegisterPage_lineEdit_EmailInput.setStyleSheet("QLineEdit {\n"
                                       "color: rgb(231, 231, 231);\n"
                                       "font: 15pt \"Verdana\";\n"
                                       "border: None;\n"
@@ -114,12 +114,12 @@ class Login_Page(QtWidgets.QWidget):
                                       "background: rgb(20, 20, 40);\n"
                                       "selection-background-color: darkgray;\n"
                                       "}")
-        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_3)
+        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.RegisterPage_lineEdit_EmailInput)
               
-        self.lineEdit_password = PasswordEdit(self.widget)
-        self.lineEdit_password.setMinimumSize(QtCore.QSize(0, 40))
-        self.lineEdit_password.setPlaceholderText("Password...")
-        self.lineEdit_password.setStyleSheet("QLineEdit {\n"
+        self.RegisterPage_lineEdit_passwordInput = PasswordEdit(self.widget)
+        self.RegisterPage_lineEdit_passwordInput.setMinimumSize(QtCore.QSize(0, 40))
+        self.RegisterPage_lineEdit_passwordInput.setPlaceholderText("Password...")
+        self.RegisterPage_lineEdit_passwordInput.setStyleSheet("QLineEdit {\n"
                                       "color: orange;\n"
                                       "font: 15pt \"Verdana\";\n"
                                       "border: None;\n"
@@ -129,14 +129,14 @@ class Login_Page(QtWidgets.QWidget):
                                       "background: rgb(20, 20, 40);\n"
                                       "selection-background-color: darkgray;\n"
                                       "}")
-        self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_password)
-        self.lineEdit_password.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.RegisterPage_lineEdit_passwordInput)
+        self.RegisterPage_lineEdit_passwordInput.setEchoMode(QtWidgets.QLineEdit.Password)
         
         
-        self.lineEdit_password_again = PasswordEdit(self.widget)
-        self.lineEdit_password_again.setMinimumSize(QtCore.QSize(0, 40))
-        self.lineEdit_password_again.setPlaceholderText("Password again...")
-        self.lineEdit_password_again.setStyleSheet("QLineEdit {\n"
+        self.RegisterPage_lineEdit_password_againInput = PasswordEdit(self.widget)
+        self.RegisterPage_lineEdit_password_againInput.setMinimumSize(QtCore.QSize(0, 40))
+        self.RegisterPage_lineEdit_password_againInput.setPlaceholderText("Password again...")
+        self.RegisterPage_lineEdit_password_againInput.setStyleSheet("QLineEdit {\n"
                                       "color: orange;\n"
                                       "font: 15pt \"Verdana\";\n"
                                       "border: None;\n"
@@ -146,8 +146,8 @@ class Login_Page(QtWidgets.QWidget):
                                       "background: rgb(20, 20, 40);\n"
                                       "selection-background-color: darkgray;\n"
                                       "}")
-        self.formLayout_2.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.lineEdit_password_again)
-        self.lineEdit_password_again.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.formLayout_2.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.RegisterPage_lineEdit_password_againInput)
+        self.RegisterPage_lineEdit_password_againInput.setEchoMode(QtWidgets.QLineEdit.Password)
         
         
         self.line = QtWidgets.QFrame(self.widget)
@@ -156,12 +156,6 @@ class Login_Page(QtWidgets.QWidget):
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.SpanningRole, self.line)
 
-        self.line_3 = QtWidgets.QFrame(self.widget)
-        self.line_3.setStyleSheet("border: 2px solid white;")
-        self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.SpanningRole, self.line_3)
-
         self.line_2 = QtWidgets.QFrame(self.widget)
         self.line_2.setStyleSheet("border: 2px solid orange;")
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
@@ -169,10 +163,16 @@ class Login_Page(QtWidgets.QWidget):
         self.formLayout_2.setWidget(5, QtWidgets.QFormLayout.SpanningRole, self.line_2)
 
         self.line_3 = QtWidgets.QFrame(self.widget)
-        self.line_3.setStyleSheet("border: 2px solid orange;")
+        self.line_3.setStyleSheet("border: 2px solid white;")
         self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.formLayout_2.setWidget(7, QtWidgets.QFormLayout.SpanningRole, self.line_3)
+        self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.SpanningRole, self.line_3)
+
+        self.line_4 = QtWidgets.QFrame(self.widget)
+        self.line_4.setStyleSheet("border: 2px solid orange;")
+        self.line_4.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_4.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.formLayout_2.setWidget(7, QtWidgets.QFormLayout.SpanningRole, self.line_4)
         
         self.RegisterButton = QtWidgets.QPushButton(self.widget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
@@ -212,18 +212,18 @@ class Login_Page(QtWidgets.QWidget):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("Form", "Form"))
         self.Login_PageCloseButton.setText(_translate("Form", "X"))
-        self.label_2.setText(_translate(
+        self.RegisterPage_label_UsernamePNG.setText(_translate(
             "Form",
             "<html><head/><body><p><img src=\":/icons/icons/user_32x32.png\"/></p></body></html>"))
-        self.label_3.setText(_translate(
+        self.RegisterPage_label_PasswordPNG.setText(_translate(
             "Form",
             "<html><head/><body><p><img src=\":/icons/icons/lock_32x32.png\"/></p></body></html>"))
         
-        self.label_5.setText(_translate(
+        self.RegisterPage_label_PasswordAgainPNG.setText(_translate(
             "Form",
             "<html><head/><body><p><img src=\":/icons/icons/lock_32x32.png\"/></p></body></html>"))
         
-        self.label_4.setText(_translate(
+        self.RegisterPage_label_MailPNG.setText(_translate(
             "Form",
             "<html><head/><body><p><img src=\":/icons/icons/mail_32x32.png\"/></p></body></html>"))
         self.RegisterButton.setText(_translate("Form", "Register me!"))
@@ -233,7 +233,7 @@ class Login_Page(QtWidgets.QWidget):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    login_form = Login_Page()
+    login_form = RegisterPage()
     login_form.show()
 
     sys.exit(app.exec_())
