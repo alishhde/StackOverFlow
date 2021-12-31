@@ -5,7 +5,7 @@ import GUI.Login_Page_icons_rc
 from GUI.Login_Page_customized import PasswordEdit
 
 
-class LoginForm(QtWidgets.QWidget):
+class Login_Page(QtWidgets.QWidget):
     """Basic login form.
     """
     def __init__(self, *args, **kwargs):
@@ -98,6 +98,9 @@ class LoginForm(QtWidgets.QWidget):
         self.label_3 = QtWidgets.QLabel(self.widget)
         self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_3)
 
+        self.label_5 = QtWidgets.QLabel(self.widget)
+        self.formLayout_2.setWidget(6, QtWidgets.QFormLayout.LabelRole, self.label_5)
+        
         self.lineEdit_3 = QtWidgets.QLineEdit(self.widget)
         self.lineEdit_3.setMinimumSize(QtCore.QSize(0, 40))
         self.lineEdit_3.setPlaceholderText("Email...")
@@ -112,7 +115,7 @@ class LoginForm(QtWidgets.QWidget):
                                       "selection-background-color: darkgray;\n"
                                       "}")
         self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_3)
-
+              
         self.lineEdit_password = PasswordEdit(self.widget)
         self.lineEdit_password.setMinimumSize(QtCore.QSize(0, 40))
         self.lineEdit_password.setPlaceholderText("Password...")
@@ -128,7 +131,25 @@ class LoginForm(QtWidgets.QWidget):
                                       "}")
         self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_password)
         self.lineEdit_password.setEchoMode(QtWidgets.QLineEdit.Password)
-
+        
+        
+        self.lineEdit_password_again = PasswordEdit(self.widget)
+        self.lineEdit_password_again.setMinimumSize(QtCore.QSize(0, 40))
+        self.lineEdit_password_again.setPlaceholderText("Password again...")
+        self.lineEdit_password_again.setStyleSheet("QLineEdit {\n"
+                                      "color: orange;\n"
+                                      "font: 15pt \"Verdana\";\n"
+                                      "border: None;\n"
+                                      "border-bottom-color: white;\n"
+                                      "border-radius: 10px;\n"
+                                      "padding: 0 8px;\n"
+                                      "background: rgb(20, 20, 40);\n"
+                                      "selection-background-color: darkgray;\n"
+                                      "}")
+        self.formLayout_2.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.lineEdit_password_again)
+        self.lineEdit_password_again.setEchoMode(QtWidgets.QLineEdit.Password)
+        
+        
         self.line = QtWidgets.QFrame(self.widget)
         self.line.setStyleSheet("border: 2px solid white;")
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
@@ -147,40 +168,33 @@ class LoginForm(QtWidgets.QWidget):
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.formLayout_2.setWidget(5, QtWidgets.QFormLayout.SpanningRole, self.line_2)
 
-        self.SignInButton = QtWidgets.QPushButton(self.widget)
+        self.line_3 = QtWidgets.QFrame(self.widget)
+        self.line_3.setStyleSheet("border: 2px solid orange;")
+        self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.formLayout_2.setWidget(7, QtWidgets.QFormLayout.SpanningRole, self.line_3)
+        
+        self.RegisterButton = QtWidgets.QPushButton(self.widget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.SignInButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(self.RegisterButton.sizePolicy().hasHeightForWidth())
 
-        self.SignInButton.setSizePolicy(sizePolicy)
-        self.SignInButton.setMinimumSize(QtCore.QSize(0, 60))
-        self.SignInButton.setAutoFillBackground(False)
-        self.SignInButton.setStyleSheet("color: rgb(231, 231, 231);\n"
+        self.RegisterButton.setSizePolicy(sizePolicy)
+        self.RegisterButton.setMinimumSize(QtCore.QSize(0, 60))
+        self.RegisterButton.setAutoFillBackground(False)
+        self.RegisterButton.setStyleSheet("color: rgb(231, 231, 231);\n"
                                       "font: 17pt \"Verdana\";\n"
                                       "border: 2px solid orange;\n"
                                       "padding: 5px;\n"
                                       "border-radius: 3px;\n"
                                       "opacity: 200;\n"
                                       "")
-        self.SignInButton.setAutoDefault(True)
-        self.formLayout_2.setWidget(7, QtWidgets.QFormLayout.SpanningRole, self.SignInButton)
-
-        self.RegisterButton = QtWidgets.QPushButton(self.widget)
-        self.RegisterButton.setMinimumSize(QtCore.QSize(0, 60))
-        self.RegisterButton.setStyleSheet("color: rgb(231, 231, 231);\n"
-                                        "font: 17pt \"Verdana\";\n"
-                                        "border: 2px solid orange;\n"
-                                        "padding: 5px;\n"
-                                        "border-radius: 3px;\n"
-                                        "opacity: 200;\n"
-                                        "")
-        self.RegisterButton.setDefault(False)
-        self.RegisterButton.setFlat(False)
-        self.formLayout_2.setWidget(8, QtWidgets.QFormLayout.SpanningRole, self.RegisterButton)
+        self.RegisterButton.setAutoDefault(True)
+        self.formLayout_2.setWidget(10, QtWidgets.QFormLayout.SpanningRole, self.RegisterButton)
 
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.formLayout_2.setItem(6, QtWidgets.QFormLayout.SpanningRole, spacerItem)
+        self.formLayout_2.setItem(8, QtWidgets.QFormLayout.SpanningRole, spacerItem)
         self.verticalLayout_3.addLayout(self.formLayout_2)
 
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
@@ -204,18 +218,22 @@ class LoginForm(QtWidgets.QWidget):
         self.label_3.setText(_translate(
             "Form",
             "<html><head/><body><p><img src=\":/icons/icons/lock_32x32.png\"/></p></body></html>"))
+        
+        self.label_5.setText(_translate(
+            "Form",
+            "<html><head/><body><p><img src=\":/icons/icons/lock_32x32.png\"/></p></body></html>"))
+        
         self.label_4.setText(_translate(
             "Form",
             "<html><head/><body><p><img src=\":/icons/icons/mail_32x32.png\"/></p></body></html>"))
-        self.SignInButton.setText(_translate("Form", "Sign In"))
-        self.RegisterButton.setText(_translate("Form", "Register"))
+        self.RegisterButton.setText(_translate("Form", "Register me!"))
 
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    login_form = LoginForm()
+    login_form = Login_Page()
     login_form.show()
 
     sys.exit(app.exec_())

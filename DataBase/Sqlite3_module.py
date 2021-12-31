@@ -5,7 +5,7 @@ rand_code = []
 class DataBase():
     def __init__(self, connection):
         self.cnnt = connection
-                                ## Creating a table for all of the stuff is in warehouse
+        ## Creating a table for all of the stuff is in warehouse
         self.cnnt.execute('''CREATE TABLE IF NOT EXISTS Anbar_stuffs_table
         (stuff_name text not null,
         stuff_kind text not null,
