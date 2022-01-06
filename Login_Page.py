@@ -1,5 +1,5 @@
 
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore, QtWidgets, QtGui
 
 import GUI.Login_Page_icons_rc
 from GUI.Login_Page_customized import PasswordEdit
@@ -11,7 +11,14 @@ class LoginPage(QtWidgets.QWidget):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.setup_ui()
-
+        
+    def minimize_button(self):
+        self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
+        # self.tray = QSystemTrayIcon(QtGui.QIcon("logo.png"), self)
+        # self.tray.activated.connect(self.trayClicked)
+        # self.tray.show()
+        
+        
     def setup_ui(self):
         """Setup the login form.
         """
@@ -59,6 +66,18 @@ class LoginPage(QtWidgets.QWidget):
         self.Login_PageCloseButton.clicked.connect(self.close)
         self.verticalLayout_2.addWidget(self.Login_PageCloseButton, 0, QtCore.Qt.AlignRight)
 
+
+        self.Login_PageMiniMizeButton = QtWidgets.QPushButton(self.widget)
+        self.Login_PageMiniMizeButton.setMinimumSize(QtCore.QSize(35, 25))
+        self.Login_PageMiniMizeButton.setMaximumSize(QtCore.QSize(35, 25))
+        self.Login_PageMiniMizeButton.setStyleSheet("color: white;\n"
+                                        "font: 13pt \"Verdana\";\n"
+                                        "border-radius: 1px;\n"
+                                        "opacity: 200;\n")
+        self.Login_PageMiniMizeButton.clicked.connect(self.minimize_button)
+        self.verticalLayout_2.addWidget(self.Login_PageMiniMizeButton, 1, QtCore.Qt.AlignRight)
+        
+        
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
         self.verticalLayout_3.setContentsMargins(-1, 15, -1, -1)
 
@@ -198,6 +217,7 @@ class LoginPage(QtWidgets.QWidget):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("Form", "Form"))
         self.Login_PageCloseButton.setText(_translate("Form", "X"))
+        self.Login_PageMiniMizeButton.setText(_translate("Form", "-"))
         self.LoginPage_label_UsernamePNG.setText(_translate(
             "Form",
             "<html><head/><body><p><img src=\":/icons/icons/user_32x32.png\"/></p></body></html>"))

@@ -1,12 +1,13 @@
 import sys
+from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QDialog, QApplication, QInputDialog, QListWidgetItem, QMessageBox, QPushButton
 
+# Import UIs
 import Login_Page
 import Register_Page
 import DataBase.Sqlite3_module
 
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QDialog, QApplication, QInputDialog, QListWidgetItem, QMessageBox, QPushButton
 
 # ---------------------------------------- Main Code Start ---------------------------------------- #
 
