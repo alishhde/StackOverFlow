@@ -1,3 +1,4 @@
+from time import sleep
 
 from PyQt5 import QtCore, QtWidgets, QtGui
 
@@ -11,14 +12,36 @@ class LoginPage(QtWidgets.QWidget):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.setup_ui()
-        
-    def minimize_button(self):
-        self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
-        # self.tray = QSystemTrayIcon(QtGui.QIcon("logo.png"), self)
-        # self.tray.activated.connect(self.trayClicked)
+        # self.tray = QtWidgets.QSystemTrayIcon(QtGui.QIcon("D:\My Works\Projects\Python Projects\Project StackOverFlow\GUI\login_Page\icons\rocket_48x48.png"), self)
+        # self.tray.activated.connect(self.unminimize_button)
         # self.tray.show()
+    
+        # --------------------------------------------------------------------
+    #  https://evileg.com/en/post/68/    
+    # def minimize_button(self):
+    #     self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
+    #     # self.tray = QtWidgets.QSystemTrayIcon(QtGui.QIcon("D:\My Works\Projects\Python Projects\Project StackOverFlow\GUI\login_Page\icons\rocket_48x48.png"), self)
+    #     # self.tray.activated.connect(self.unminimize_button)
+    #     # self.tray.show()
+        
+    #     # Adding an icon
+    #     icon = QtGui.QIcon("D:\My Works\Projects\Python Projects\Project StackOverFlow\GUI\login_Page\icons\rocket_48x48.png")
+        
+    #     # Adding item on the menu bar
+    #     tray = QtWidgets.QSystemTrayIcon()
+    #     tray.setIcon(self.style().standardIcon(QStyle.SP_ComputerIcon))
+    #     tray.setVisible(True)
+        
+    # def unminimize_button(self):    
+    #         self.setWindowFlags(self.windowFlags() & (~QtCore.Qt.Tool))
+    #         self.setWindowFlags(self.windowFlags() | QtCore.Qt.WindowStaysOnTopHint)
+    #         self.setWindowFlags(self.windowFlags() & ~QtCore.Qt.WindowStaysOnTopHint)
+    #         self.setWindowState(QtCore.Qt.WindowActive)        
+    #         self.show()
         
         
+        
+        # --------------------------------------------------------------------
     def setup_ui(self):
         """Setup the login form.
         """
@@ -74,7 +97,7 @@ class LoginPage(QtWidgets.QWidget):
                                         "font: 13pt \"Verdana\";\n"
                                         "border-radius: 1px;\n"
                                         "opacity: 200;\n")
-        self.Login_PageMiniMizeButton.clicked.connect(self.minimize_button)
+        self.Login_PageMiniMizeButton.clicked.connect(self.close)
         self.verticalLayout_2.addWidget(self.Login_PageMiniMizeButton, 1, QtCore.Qt.AlignRight)
         
         

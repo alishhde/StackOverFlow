@@ -6,7 +6,6 @@ from PyQt5.QtWidgets import QDialog, QApplication, QInputDialog, QListWidgetItem
 # Import UIs
 import Login_Page
 import Register_Page
-import DataBase.Sqlite3_module
 
 
 # ---------------------------------------- Main Code Start ---------------------------------------- #
