@@ -1,36 +1,12 @@
-import sys
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QDialog, QApplication, QInputDialog, QListWidgetItem, QMessageBox, QPushButton
+from Config.SqlalchemyUtils import Base, engine
+from Model.TO.Answer import Answer
+from Model.TO.Comment import Comment
+from Model.TO.Question import Question
+from Model.TO.User import User
 
-# Import UIs
-import Login_Page
-import Register_Page
+user = User()
+question = Question()
+answer = Answer()
+comment = Comment()
 
-
-# ---------------------------------------- Main Code Start ---------------------------------------- #
-
-class Main():
-    def __init__(self):
-        self.loginpage = Login_Page.LoginPage()
-        self.loginpage.show()
-        
-        self.loginpage.RegisterButton.clicked.connect(self.showRegisterPage)
-        
-    
-    def showRegisterPage(self):
-        self.registerpage = Register_Page.RegisterPage()
-        self.loginpage.hide()
-        self.registerpage.show()
-    
-    def __str__(self):
-        pass
-
-
-# ---------------------------------------- Main Code End   ---------------------------------------- #
-
-
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    window = Main()
-    sys.exit(app.exec_())
+Base.metadata.create_all(engine, checkfirst=True)
