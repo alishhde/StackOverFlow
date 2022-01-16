@@ -6,7 +6,6 @@ import time
 
 
 class Client(asyncore.dispatcher_with_send):
-
     def __init__(self, host, port, message, pk):
         self.logger = logging.getLogger('CLIENT')
         asyncore.dispatcher.__init__(self)
