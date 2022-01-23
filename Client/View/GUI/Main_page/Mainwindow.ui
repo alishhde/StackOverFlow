@@ -1017,7 +1017,7 @@ hover {background-color: #f1f1f1}</string>
         </rect>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="Home_page">
         <attribute name="title">
@@ -2952,6 +2952,40 @@ border: 5px;</string>
                 <widget class="QLabel" name="label_17">
                  <property name="text">
                   <string/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="AskQuestion_2">
+                 <property name="minimumSize">
+                  <size>
+                   <width>200</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(10, 149, 255);
+color: rgb(255, 255, 255);
+border: 5px;</string>
+                 </property>
+                 <property name="text">
+                  <string>Post Your Answer</string>
                  </property>
                 </widget>
                </item>
