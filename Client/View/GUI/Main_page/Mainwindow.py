@@ -1550,4 +1550,14 @@ class Ui_Form(object):
         self.plainTextEdit_8.setPlainText(_translate("Form", "Answers Body\n"
 ""))
         self.Tabs.setTabText(self.Tabs.indexOf(self.MyQuestions_page), _translate("Form", "My Questions"))
-import aliprofile_rc
+
+if __name__ == "__main__":
+    import sys
+    import aliprofileqrc
+
+    app = QtWidgets.QApplication(sys.argv)
+    Dialog = QtWidgets.QDialog()
+    ui = Ui_Form()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())
