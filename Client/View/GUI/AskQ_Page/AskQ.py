@@ -67,3 +67,13 @@ class Ui_Form(object):
         self.StckLabel.setText(_translate("Form", "Stack Over Flow"))
         self.AskQuestionPage_plainTextEdit.setPlainText(_translate("Form", "enter your question "))
         self.PostQuestion_button.setText(_translate("Form", "Post"))
+
+if __name__ == "__main__":
+    import sys
+
+    app = QtWidgets.QApplication(sys.argv)
+    Dialog = QtWidgets.QDialog()
+    ui = Ui_Form()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())
