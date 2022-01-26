@@ -1,6 +1,17 @@
 from Server.Model.DA import UserDA
 
 
+def verifyUser(username, inputPassword):
+    accepted = 0
+    try:
+        accepted = UserDA.verify(username, inputPassword)
+    except Exception as e:
+        print("-----verifyUser-----")
+        print(e)
+        print("-----verifyUser-----")
+    return accepted
+
+
 def insertUser(user):
     rowsAffected = 0
     try:
@@ -12,15 +23,15 @@ def insertUser(user):
     return rowsAffected
 
 
-def selectUser():
-    users = []
+def selectUser(username):
+    user = None
     try:
-        users = UserDA.select()
+        user = UserDA.select(username)
     except Exception as e:
         print("-----selectUser-----")
         print(e)
         print("-----selectUser-----")
-    return users
+    return user
 
 
 def updateUser(user):
@@ -34,10 +45,10 @@ def updateUser(user):
     return rowsAffected
 
 
-def deleteUser(user):
+def deleteUser(userId):
     rowsAffected = 0
     try:
-        rowsAffected = UserDA.delete(user)
+        rowsAffected = UserDA.delete(userId)
     except Exception as e:
         print("-----deleteUser-----")
         print(e)

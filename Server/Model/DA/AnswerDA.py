@@ -1,4 +1,4 @@
-from Server.Config.SqlalchemyUtils import session
+from Server.Model.DA import session, object_as_dict
 from Server.Model.TO.Answer import Answer
 from Server.Model.TO.User import User
 
@@ -12,7 +12,9 @@ def insert(answer, userId):
 
 
 def select():
-    answers = session.query(Answer).all()
+    answers = []
+    for answer in session.query(Answer).all():
+        answers.append(object_as_dict(answer))
     session.commit()
     return answers
 

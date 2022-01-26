@@ -1,5 +1,14 @@
-from Server.Config.SqlalchemyUtils import session
+from Server.Model.DA import session, object_as_dict
 from Server.Model.TO.User import User
+
+
+def verify(username, inputPassword):
+    password = session.query(User.password).where(User.username == username).first()
+    session.commit()
+    if inputPassword == password[0]:
+        return 1
+    else:
+        return 0
 
 
 def insert(user):
@@ -8,14 +17,14 @@ def insert(user):
     return 1
 
 
-def select():
-    users = session.query(User).all()
+def select(username):
+    user = session.query(User).filter(User.username == username).first()
     session.commit()
-    return users
+    return object_as_dict(user)
 
 
 def update(user):
-    session.query(User).filter(user.id).update(
+    session.query(User).filter(User.id == user.id).update(
         {User.id: user.id, User.firstName: user.firstName, User.lastName: user.lastName,
          User.email: user.email, User.username: user.username,
          User.password: user.password, User.userType: user.userType,
@@ -27,6 +36,7 @@ def update(user):
 
 
 def delete(userId):
-    session.query(User).filter(userId).delete()
+    user = session.query(User).filter(User.id == userId).first()
+    session.delete(user)
     session.commit()
     return 1
